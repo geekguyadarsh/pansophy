@@ -86,68 +86,68 @@ const dataset = [
 const Table = () => {
   return (
     <section className="container py-2 mx-auto">
-      <div className="flex flex-col mt-6">
-        <div className="mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div className="flex flex-col mt-6 overflow-x-scroll overflow-y-hidden rounded-xl">
+        <div className="mx-4 -my-2 sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-            <div className="overflow-hidden border border-[#16191F] md:rounded-lg">
-              <table className="min-w-full divide-y divide-[#16191F]">
+            <div className="border border-[#16191F] md:rounded-lg">
+              <table className="divide-y divide-[#16191F]">
                 <thead className="bg-[#0C0D0F]">
                   <tr>
                     <th
                       scope="col"
-                      className="py-3.5 px-4 text-xs md:text-sm font-bold text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      className="py-3.5 px-4 text-xs md:text-sm font-bold text-left text-gray-500 dark:text-gray-400"
                     >
                       <span>ID - UUID</span>
                     </th>
                     <th
                       scope="col"
-                      className="px-12 py-3.5 text-xs md:text-sm font-bold text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      className="px-12 py-3.5 text-xs md:text-sm font-bold text-left text-gray-500 dark:text-gray-400"
                     >
                       Model Name
                     </th>
 
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-xs md:text-sm font-bold text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      className="px-4 py-3.5 text-xs md:text-sm font-bold text-left text-gray-500 dark:text-gray-400"
                     >
                       Model Size
                     </th>
 
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-xs md:text-sm font-bold text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      className="px-4 py-3.5 text-xs md:text-sm font-bold text-left text-gray-500 dark:text-gray-400"
                     >
                       Status
                     </th>
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-xs md:text-sm font-bold text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      className="px-4 py-3.5 text-xs md:text-sm font-bold text-left text-gray-500 dark:text-gray-400"
                     >
                       Base Model
                     </th>
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-xs md:text-sm font-bold text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      className="px-4 py-3.5 text-xs md:text-sm font-bold text-left text-gray-500 dark:text-gray-400"
                     >
                       Date Created
                     </th>
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-xs md:text-sm font-bold text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      className="px-4 py-3.5 text-xs md:text-sm font-bold text-left text-gray-500 dark:text-gray-400"
                     >
                       Last Edited
                     </th>
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-xs md:text-sm font-bold text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                      className="px-4 py-3.5 text-xs md:text-sm font-bold text-left text-gray-500 dark:text-gray-400"
                     >
                       Actions
                     </th>
                   </tr>
                 </thead>
                 <tbody className="bg-[#0C0D0F] divide-y divide-[#16191F]">
-                  {dataset.map((data) => (
-                    <tr key={data.name}>
+                  {dataset.map((data, i) => (
+                    <tr key={i}>
                       <td className="px-4 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="ml-4">
@@ -163,7 +163,7 @@ const Table = () => {
                         </div>
                       </td>
                       <td className="px-12 py-4 whitespace-nowrap">
-                        <div className="text-xs text-gray-900 md:text-sm dark:text-white">
+                        <div className="text-xs text-left text-gray-900 md:text-sm dark:text-white">
                           {data.modelSize}
                         </div>
                       </td>
@@ -204,7 +204,7 @@ const Table = () => {
                       <td className="px-4 py-4 text-xs text-gray-500 md:text-sm whitespace-nowrap dark:text-gray-300">
                         {data.lastEdited}
                       </td>
-                      <td className="px-4 py-4 text-xs font-medium text-right md:text-sm whitespace-nowrap">
+                      <td className="px-4 py-4 text-xs font-medium md:text-sm whitespace-nowrap">
                         <a
                           href="#"
                           className="text-[#0096C7] hover:text-indigo-600"
@@ -221,37 +221,62 @@ const Table = () => {
         </div>
       </div>
       <div className="flex items-center justify-center mt-6">
-        <div className="items-center justify-center md:flex gap-x-3">
+        <div className="flex items-center justify-center gap-3">
           <a
             href="#"
-            className="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100"
+            className="px-3 py-3 text-sm border border-[#16191F] rounded-md"
           >
-            {`<`}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-3 h-3"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
+            </svg>
           </a>
-          <a
-            href="#"
-            className="px-2 py-1 text-sm text-blue-500 rounded-md dark:bg-gray-800 bg-blue-100/60"
-          >
+          <a href="#" className="px-4 py-2 text-sm  bg-[#023E8A] rounded-md ">
             1
           </a>
 
           <a
             href="#"
-            className="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100"
+            className="px-4 py-2 text-sm border border-[#16191F] rounded-md"
           >
             2
           </a>
+
           <a
             href="#"
-            className="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100"
+            className="px-4 py-2 text-sm border border-[#16191F] rounded-md"
           >
             3
           </a>
+
           <a
             href="#"
-            className="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100"
+            className="px-3 py-3 text-sm border border-[#16191F] rounded-md"
           >
-            {`>`}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-3 h-3"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
           </a>
         </div>
       </div>
@@ -271,14 +296,15 @@ export default function Home() {
       <main>
         <div className="flex">
           <Sidebar />
-          <div className="w-auto px-4 py-10 overflow-scroll md:overflow-auto md:mx-8">
+
+          <div className="w-auto px-4 py-10 overflow-hidden md:mx-8">
             <div className="flex flex-col flex-wrap items-center justify-center mb-4 md:justify-between md:flex-row topbar">
               <div className="text-4xl font-bold">Models</div>
               <button className="bg-[#023E8A] px-3 py-2 text-sm rounded mt-4 md:mt-0 ">
                 + Add Model
               </button>
             </div>
-            <div className="flex justify-center md:justify-between subscription bg-[#0c0d0f] p-4 rounded border border-[#16191F] mb-4 flex-wrap ">
+            <div className="flex justify-center flex-col md:flex-row md:justify-between items-center  subscription bg-[#0c0d0f] p-4 rounded border border-[#16191F] mb-4 flex-wrap ">
               <div className="flex items-center gap-2 info">
                 <div className="bg-[#023E8A]  rounded-full p-4">
                   <Image src={card} alt="subscription" />
@@ -303,7 +329,22 @@ export default function Home() {
                   placeholder="Search by name or ID..."
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                  <div className="cursor-pointer">🔍</div>
+                  <div className="cursor-pointer">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <div className="filter">
