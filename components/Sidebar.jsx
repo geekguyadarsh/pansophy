@@ -53,8 +53,8 @@ export default function Sidebar() {
   return (
     <div
       className={`${
-        isCollapsed ? "md:w-16 w-16" : "w-2/3 md:w-1/4 absolute  z-50"
-      } h-screen bg-[#0C0D0F] md:relative transition-all duration-300`}
+        isCollapsed ? "md:w-16 w-16" : "w-2/3 md:w-1/4 z-50"
+      } h-screen bg-[#0C0D0F] relative transition-all duration-300`}
     >
       <div className="flex justify-between p-4 mb-2">
         {!isCollapsed && <Image className="" src={Pansophy} alt="logo" />}
@@ -65,10 +65,14 @@ export default function Sidebar() {
 
       {!isCollapsed && (
         <div className="tabs">
-          <div className="flex py-4 pl-4 tab border-s-2 border-[#0096C7] bg-gradient-to-r from-[#023E8A3D]/[0.24] from-10% to-[#0C0D0F]">
-            <Image className="mr-2" src={Speeedometer} alt="toggle" />
-
-            <div className="text-[#0096C7] text-sm">Modals</div>
+          <div className="flex py-4 pl-4 tab border-s-[3px] border-[#0096C7] justify-between bg-gradient-to-r from-[#023E8A3D]/[0.24] from-10% to-[#0C0D0F]">
+            <div className="flex">
+              <Image className="mr-2" src={Speeedometer} alt="toggle" />
+              <div className="text-[#0096C7] text-sm">Modals</div>
+            </div>
+            <div className="mr-4 text-xs bg-[#023e8a] rounded-2xl px-2 py-1">
+              32
+            </div>
           </div>
           <div className="flex py-4 pl-4 tab">
             <Image className="mr-2" src={datasets} alt="toggle" />
@@ -94,7 +98,7 @@ export default function Sidebar() {
       )}
       {isCollapsed && (
         <div className="pr-4 tabs">
-          <div className="flex py-4 pl-4 tab border-s-2 border-[#0096C7] bg-gradient-to-r from-[#023E8A3D]/[0.24] from-10% to-[#0C0D0F]">
+          <div className="flex py-4 pl-4 tab border-s-[3px] border-[#0096C7] bg-gradient-to-r from-[#023E8A3D]/[0.24] from-10% to-[#0C0D0F]">
             <Image className="mr-2" src={Speeedometer} alt="toggle" />
           </div>
           <div className="flex py-4 pl-4 tab">
