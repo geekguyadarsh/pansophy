@@ -98,7 +98,7 @@ export default function Home() {
         <div className="flex">
           <Sidebar />
 
-          <div className="w-full px-4 py-10 overflow-hidden md:mx-8">
+          <div className="w-full px-4 py-10 overflow-hidden md:mx-8 top-10">
             <div className="flex flex-col flex-wrap items-center justify-center mb-4 md:justify-between md:flex-row topbar">
               <div className="text-4xl font-semibold">Models</div>
               <button className="bg-[#023E8A] px-3 py-2 font-[500] text-sm rounded mt-4 md:mt-0 ">
@@ -117,7 +117,7 @@ export default function Home() {
                   <div className="text-md">Expiring in 2 Days</div>
                 </div>
               </div>
-              <button className="bg-[##08090A] h-fit py-4 px-4 text-xs rounded font-[500] border border-[#16191F] mt-4 md:mt-0">
+              <button className="bg-[#08090A] h-fit py-4 px-4 text-xs rounded font-[500] border border-[#16191F] mt-4 md:mt-0">
                 Renew Subscription
               </button>
             </div>
@@ -137,7 +137,8 @@ export default function Home() {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-4 h-4 text-[#6C757D]">
+                      className="w-4 h-4 text-[#6C757D]"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -150,7 +151,8 @@ export default function Home() {
               <div className="w-1/4 filter">
                 <select
                   name="filter"
-                  className="px-1 py-2 min-w-full text-[#6C757D] text-sm rounded bg-[#0c0d0f] border border-[#16191F]">
+                  className="px-1 py-2 min-w-full text-[#6C757D] text-sm rounded bg-[#0c0d0f] border border-[#16191F]"
+                >
                   <option value="1" disabled selected>
                     Filter by...
                   </option>
@@ -167,44 +169,52 @@ export default function Home() {
                   <tr>
                     <th
                       scope="col"
-                      className="py-3.5 px-4 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400">
+                      className="py-3.5 px-4 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400"
+                    >
                       <span>ID - UUID</span>
                     </th>
                     <th
                       scope="col"
-                      className="px-12 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400">
+                      className="px-12 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400"
+                    >
                       Model Name
                     </th>
 
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400">
+                      className="px-4 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400"
+                    >
                       Model Size
                     </th>
 
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400">
+                      className="px-4 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400"
+                    >
                       Status
                     </th>
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400">
+                      className="px-4 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400"
+                    >
                       Base Model
                     </th>
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400">
+                      className="px-4 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400"
+                    >
                       Date Created
                     </th>
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400">
+                      className="px-4 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400"
+                    >
                       Last Edited
                     </th>
                     <th
                       scope="col"
-                      className="px-4 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400">
+                      className="px-4 py-3.5 text-xs md:text-sm font-[500] text-left text-gray-500 dark:text-gray-400"
+                    >
                       Actions
                     </th>
                   </tr>
@@ -251,7 +261,8 @@ export default function Home() {
                             "text-[#3CB179] bg-[#3CB179]/[0.12]"
                           }
                          
-                        rounded-md`}>
+                        rounded-md`}
+                        >
                           {data.status == 0 && "In-progress"}
                           {data.status == 1 && "Pending"}
                           {data.status == 2 && "Failed"}
@@ -270,7 +281,8 @@ export default function Home() {
                       <td className="px-4 py-4 text-xs font-medium md:text-sm whitespace-nowrap">
                         <a
                           href="#"
-                          className="text-[#0096C7] hover:text-indigo-600">
+                          className="text-[#0096C7] hover:text-indigo-600"
+                        >
                           View Actions
                         </a>
                       </td>
@@ -283,14 +295,16 @@ export default function Home() {
               <div className="flex items-center justify-center gap-3">
                 <a
                   href="#"
-                  className="px-3 py-3 text-sm border border-[#16191F] rounded-md">
+                  className="px-3 py-3 text-sm border border-[#16191F] rounded-md"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
-                    className="w-3 h-3">
+                    className="w-3 h-3"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -300,32 +314,37 @@ export default function Home() {
                 </a>
                 <a
                   href="#"
-                  className="px-4 py-2 text-sm  bg-[#023E8A] rounded-md ">
+                  className="px-4 py-2 text-sm  bg-[#023E8A] rounded-md "
+                >
                   1
                 </a>
 
                 <a
                   href="#"
-                  className="px-4 py-2 text-sm border border-[#16191F] rounded-md">
+                  className="px-4 py-2 text-sm border border-[#16191F] rounded-md"
+                >
                   2
                 </a>
 
                 <a
                   href="#"
-                  className="px-4 py-2 text-sm border border-[#16191F] rounded-md">
+                  className="px-4 py-2 text-sm border border-[#16191F] rounded-md"
+                >
                   3
                 </a>
 
                 <a
                   href="#"
-                  className="px-3 py-3 text-sm border border-[#16191F] rounded-md">
+                  className="px-3 py-3 text-sm border border-[#16191F] rounded-md"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="w-3 h-3">
+                    className="w-3 h-3"
+                  >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
